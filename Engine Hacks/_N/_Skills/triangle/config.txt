@@ -1,7 +1,7 @@
 CancelAffinity_unit:
 BYTE	$00 0
 CancelAffinity_class:
-BYTE	$4e 0
+BYTE	$00 0
 CancelAffinity_weapon:
 BYTE	$00 0
 

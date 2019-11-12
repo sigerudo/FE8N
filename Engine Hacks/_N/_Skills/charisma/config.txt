@@ -1,5 +1,5 @@
 fearList:
-    BYTE $4F $66 0
+    BYTE $02 $04 $76 0
 
 charmList:
-    BYTE $00 0
+    BYTE $7B $04 $76 $03 0

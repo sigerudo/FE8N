@@ -1,6 +1,6 @@
 
 SolList:
-    BYTE $03 $07 $08 $22 0
+    BYTE $02 $07 $08 $22 $03 $04 $7D 0
 TenkuList:
     BYTE $11 $12 0
 YoukohList:
@@ -8,11 +8,11 @@ YoukohList:
 RyuseiList:
     BYTE$15 $16 0
 listImpale: //撃破
-    BYTE $00 $00 0
+    BYTE $55 $00 0
 listEclipse: //月食
     BYTE $2F $30 0
 listJihad:
-    BYTE $00 $00 0
+    BYTE $75 $00 0
 listJihad_w:
     BYTE $00 $00 0
     

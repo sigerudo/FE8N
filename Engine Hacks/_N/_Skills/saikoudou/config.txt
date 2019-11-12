@@ -1,6 +1,6 @@
 
 Lifetaker_list:
-    BYTE $00 0
+    BYTE $54 0
 Lifetaker_list_w:
     BYTE $00 0
 
@@ -16,10 +16,10 @@ RemoveList:
     BYTE $00 0
 
 GaleforceList:
-    BYTE $23 $24 $03 $04 0
+    BYTE $24 0
 
 CantoPlusList:
-    BYTE $03 $04 0
+    BYTE $00 $00 0
     
     
     

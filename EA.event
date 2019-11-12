@@ -1,24 +1,26 @@
 #ifdef _FE8_
 
-	#define Free_Space 0xEFB2E0
+	#define Free_Space 0x1000000
 
-//ä»¥ä¸‹ã¯å¿…è¦ã«å¿œã˜ã¦æœ‰åŠ¹åŒ–ã•ã›ã‚‹
-//	#define Debug_Mode	/* ãƒ‡ãƒãƒƒã‚°ãƒ¢ãƒ¼ãƒ‰æœ‰åŠ¹åŒ– */
-//	#define DOWNLOAD	/* ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒ‡ãƒ¼ã‚¿æœ‰åŠ¹åŒ– */
-//	#define RANDOM_SKILL	/* ãƒ©ãƒ³ãƒ€ãƒ ç¿’å¾—ã‚¹ã‚­ãƒ«æœ‰åŠ¹åŒ– */
-	#define REPAIR_SYSTEM	/* æ–é­”æ³•ä¿®å¾©æ©Ÿèƒ½æœ‰åŠ¹åŒ– */
+//ˆÈ‰º‚Í•K—v‚É‰‚¶‚Ä—LŒø‰»‚³‚¹‚é
+//	#define Debug_Mode	/* ƒfƒoƒbƒOƒ‚[ƒh—LŒø‰» */
+//	#define DOWNLOAD	/* ƒ_ƒEƒ“ƒ[ƒhƒf[ƒ^—LŒø‰» */
+//	#define RANDOM_SKILL /* ƒ‰ƒ“ƒ_ƒ€ƒXƒLƒ‹—LŒø‰» */
+//	#define REPAIR_SYSTEM	/* ñ–‚–@C•œ‹@”\—LŒø‰» */
 	
 	ORG Free_Space
 
 MESSAGE starts at CURRENTOFFSET
 
+	#include "Extensions\Hack Installation.txt"
 	#include "Music and Sound\_Music Installer.txt"
+	#include "Animations\_Master Animation Installer.txt"
 	#include "Mugs and Graphics\Install Graphics Data.txt"
 	#include "Engine Hacks\_MasterHackInstaller.txt"
 	#include "Maps\Master Map Installer.txt"
 	
 MESSAGE ends at CURRENTOFFSET
-//ä»¥ä¸‹ã¯å¿…è¦ã«å¿œã˜ã¦æœ‰åŠ¹åŒ–ã•ã›ã‚‹
+//ˆÈ‰º‚Í•K—v‚É‰‚¶‚Ä—LŒø‰»‚³‚¹‚é
 //	ORG $1000000
 //	#include "Spell Animations\EA.txt"
 //	#include "Animations\_Master Animation Installer.txt"	

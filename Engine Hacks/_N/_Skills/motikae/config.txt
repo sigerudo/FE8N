@@ -1,5 +1,5 @@
 QuickChangeList_class:
-    BYTE $00 0
+    BYTE $7B $74 0
 
 
 

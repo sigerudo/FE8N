@@ -28,7 +28,7 @@ Bowbreaker_w:
     BYTE $00 0
     
 Tomebreaker: //魔殺し
-    BYTE $00 0
+    BYTE $73 $7E 0
 Tomebreaker_w:
     BYTE $00 0
     
@@ -43,13 +43,13 @@ DarkBlessList_w:
     BYTE $00 0
 
 CloseDefList: //近距離防御
- BYTE $00 0
+ BYTE $74 0
  
 DistantDefList: //遠距離防御
  BYTE $00 0
     
 SwordfaireList: //剣の達人
- BYTE $15 $16 0
+ BYTE $00 0
 LancefaireList: //槍の達人
  BYTE $00 0
 AxefaireList: //斧の達人
@@ -72,7 +72,7 @@ CounterList_class:	//応撃
  BYTE $00 0
 
 SunderList_unit:	//両断
- BYTE $01 $02 $03 $04 $05 $06 $07 $08 $09 $0A $0B $0C $0D $0E $0F $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $1A $1B $1C $1D $1E $1F $20 $21 $22 $23 $24 $25 $26 $27 $28 $29 $2A $2B $2C 0
+ BYTE $00 0
 
 
 

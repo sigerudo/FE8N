@@ -6,7 +6,7 @@
 ////////////
 
 PUSH
-ORG	0x5C51E4	//本来の闘技場
+ORG	0xB4A134	//本来の闘技場
 
 POIN	join_moji
 SHORT	$061A $0646		//右がヘルプ指定
@@ -33,6 +33,11 @@ ORG		0x32038
 WORD	0x46874800
 POIN	Pair
 
+//追加 UnitAction での RescureのアドレスをORG に書いてください。
+//rebuildしたら修正してね。
+ORG 0x1B411FC
+POIN	Pair+1
+//
 
 ////降ろしても非待機
 

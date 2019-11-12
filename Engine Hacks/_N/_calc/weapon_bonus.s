@@ -16,7 +16,7 @@ LEVEL_S = (6)
 
 @0802acc8
 .thumb
-	
+	b end
 	mov r0, #0x50
 	ldrb r0, [r4, r0]
 	cmp r0, #SWORD
