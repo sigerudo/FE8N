@@ -1,29 +1,247 @@
-  #define MapSpriteStdTableOffset 0x903E0C
-  #define SpriteStd(MapSpriteStdIndex,MapSpriteStdPattern1,MapSpriteStdPattern2) "{; PUSH; ORG MapSpriteStdTableOffset+(8*MapSpriteStdIndex); SHORT MapSpriteStdPattern1 MapSpriteStdPattern2; POIN MapSpriteStdPointer; POP; MapSpriteStdPointer:; }"
+  #define MapSpriteStdTableOffset 0xB4681C
+  #define SpriteStd(MapSpriteStdIndex,MapSpriteStdPattern1,MapSpriteStdPattern2,MapSpriteStdPointer) "PUSH; ORG MapSpriteStdTableOffset+(8*MapSpriteStdIndex); SHORT MapSpriteStdPattern1 MapSpriteStdPattern2; POIN MapSpriteStdPointer; POP"
   #define MapSpriteMovTableOffset 0xA13480
-  #define SpriteMov(MapSpriteMovIndex,MapSpriteMovAdr) "{; PUSH; ORG MapSpriteMovTableOffset+(8*MapSpriteMovIndex); POIN MapSpriteMovPointer; WORD MapSpriteMovAdr; POP; MapSpriteMovPointer:; }"
+  #define SpriteMov(MapSpriteMovIndex,MapSpriteMovPointer,MapSpriteMovAdr) "PUSH; ORG MapSpriteMovTableOffset+(8*MapSpriteMovIndex); POIN MapSpriteMovPointer; WORD MapSpriteMovAdr; POP"
 
 ////////////////////ここからアイコンデータ
 
-SpriteStd($1A, 2, 1)
- #incext Png2Dmp Black_Falco_Standing.png --lz77
-SpriteMov($24, $81D9F94)
- #incext Png2Dmp Black_Falco_Moving.png --lz77
+SpriteStd($1A, 2, 1, icon_DarkPeg1)
+SpriteMov($24, icon_DarkPeg2, $81D9F94)
+ icon_DarkPeg1:
+  #incext Png2Dmp Black_Falco_Standing.png --lz77
+ icon_DarkPeg2:
+  #incext Png2Dmp Black_Falco_Moving.png --lz77
 
-/////////////////////////////
+//SpriteStd($0, 2, 0, icon_shaman_st)
+// icon_shaman_st:
+//  #incext Png2Dmp st_shaman_f.png --lz77
+SpriteMov($2E, icon_shaman_mv, $081CD240)
+ icon_shaman_mv:
+  #incext Png2Dmp mv_shaman_f.png --lz77
 
-//SpriteStd($0, 2, 0)
- #incext Png2Dmp st_shaman_f.png --lz77
-SpriteMov($2E, $081CD240)
- #incext Png2Dmp mv_shaman_f.png --lz77
+//SpriteStd($0, 2, 0, icon_druid_st)
+// icon_druid_st:
+//  #incext Png2Dmp st_druid_f.png --lz77
+SpriteMov($30, icon_druid_mv, $081CDC7C)
+ icon_druid_mv:
+  #incext Png2Dmp mv_druid_f.png --lz77
 
-////////////////////////////////
+SpriteStd($01, 2, 1, icon_aizakku1)　　　　　　　////下級アイザック
+icon_aizakku1:
+#incext Png2Dmp aizakku_Standing.png --lz77
+SpriteMov($02, icon_aizakku_mv, $081CDC7C)
+ icon_aizakku_mv:
+ #incext Png2Dmp aizakku_mv.png --lz77
+ 
+ 
+ 
+SpriteStd($03, 2, 2, izack1)       ////上級アイザック　待機
+izack1:
+#incext Png2Dmp izack1.png --lz77 
+
+SpriteMov($04, izack2, $081CDC7C)   ////上級アイザック　移動
+izack2:
+ #incext Png2Dmp izack2.png --lz77
+ 
 
 
-//SpriteStd($0, 2, 0)
- #incext Png2Dmp st_druid_f.png --lz77
-SpriteMov($30, $081CDC7C)
- #incext Png2Dmp mv_druid_f.png --lz77
+
+
+SpriteStd($43, 2, 1, fs)
+fs:
+#incext Png2Dmp fs.png --lz77
+SpriteMov($52, fm, $081CDC7C)
+ fm:
+ #incext Png2Dmp fm.png --lz77 
+ 
+ SpriteStd($44, 2, 1, ws)
+ws:
+#incext Png2Dmp ws.png --lz77
+SpriteMov($53, wm, $081CDC7C)
+ wm:
+ #incext Png2Dmp wm.png --lz77 
+ 
+ 
+  SpriteStd($45, 2, 1, ui1)
+ui1:
+#incext Png2Dmp ui1.png --lz77
+SpriteMov($54, ui2, $081CDC7C)
+ui2:
+ #incext Png2Dmp ui2.png --lz77 
+ 
+  SpriteStd($46, 2, 1, Ha1)
+Ha1:
+#incext Png2Dmp Ha1.png --lz77
+SpriteMov($55, Ha2, $081CDC7C)
+Ha2:
+ #incext Png2Dmp Ha2.png --lz77 
+ 
+SpriteStd($0, 0, 0, ri2)
+ri2:
+#incext Png2Dmp ri2.png --lz77
+SpriteMov($1, ri1, $081CDC7C)
+ri1:
+ #incext Png2Dmp ri1.png --lz77 
+ 
+SpriteStd($4E, 2, 1, axecav)
+axecav:
+#incext Png2Dmp axecav.png --lz77
+SpriteMov($5D, axecav2, $081CDC7C)
+axecav2:
+ #incext Png2Dmp axecav2.png --lz77 
+ 
+SpriteStd($48, 2, 1, kihei1)
+kihei1:
+#incext Png2Dmp kihei1.png --lz77
+SpriteMov($57, kihei2, $081CDC7C)
+kihei2:
+ #incext Png2Dmp kihei2.png --lz77 
+ 
+ SpriteStd($67, 2, 2, hiryuu1)
+hiryuu1:
+#incext Png2Dmp hiryuu1.png --lz77
+SpriteMov($78, hiryuu2, $081CDC7C)
+hiryuu2:
+ #incext Png2Dmp hiryuu2.png --lz77 
+ 
+SpriteStd($50, 0, 1, Baron1)
+Baron1:
+#incext Png2Dmp Baron1.png --lz77 
+SpriteMov($5F, Baron2, $081CDC7C)
+Baron2:
+ #incext Png2Dmp Baron2.png --lz77 
+ 
+ SpriteStd($51, 0, 1, Baron1)
+#incext Png2Dmp Baron1.png --lz77 
+SpriteMov($60, Baron2, $081CDC7C)
+ #incext Png2Dmp Baron2.png --lz77 
+ 
+ SpriteStd($54, 2, 1, Master2)
+Master2:
+#incext Png2Dmp Master2.png --lz77 
+SpriteMov($63, Master1, $081CDC7C)
+Master1:
+ #incext Png2Dmp Master1.png --lz77  
+ 
+ SpriteStd($55, 2, 1, Master2)
+#incext Png2Dmp Master2.png --lz77 
+SpriteMov($64, Master1, $081CDC7C)
+ #incext Png2Dmp Master1.png --lz77  
+ 
+ SpriteStd($4B, 2, 1, mirano1)
+mirano1:
+#incext Png2Dmp mirano1.png --lz77 
+SpriteMov($5A, mirano2, $081CDC7C)
+mirano2:
+ #incext Png2Dmp mirano2.png --lz77  
+ 
+  SpriteStd($4F, 2, 1, Do1)
+Do1:
+#incext Png2Dmp Do1.png --lz77 
+SpriteMov($5E, Do2, $081CDC7C)
+Do2:
+ #incext Png2Dmp Do2.png --lz77  
+ 
+   SpriteStd($64, 0, 0, yugu1)
+yugu1:
+#incext Png2Dmp yugu1.png --lz77 
+SpriteMov($75, yugu2, $081CDC7C)
+yugu2:
+ #incext Png2Dmp yugu2.png --lz77  
+ 
+   SpriteStd($10, 2, 0, SwordmasterS)
+SwordmasterS:
+#incext Png2Dmp SwordmasterS.png --lz77 
+SpriteMov($15, SwordmasterM, $081CDC7C)
+SwordmasterM:
+ #incext Png2Dmp SwordmasterM.png --lz77   
+ 
+   SpriteStd($52, 0, 2, Ati1)
+Ati1:
+#incext Png2Dmp Ati1.png --lz77 
+SpriteMov($61, Ati2, $081CDC7C)
+Ati2:
+ #incext Png2Dmp Ati2.png --lz77  
+ 
+   SpriteStd($63, 2, 1, Heku1)
+Heku1:
+#incext Png2Dmp Heku1.png --lz77 
+SpriteMov($74, Heku2, $081CDC7C)
+Heku2:
+ #incext Png2Dmp Heku2.png --lz77 
+ 
+ 
+  SpriteStd($62, 2, 0, Meid1)
+Meid1:
+#incext Png2Dmp Meid1.png --lz77 
+SpriteMov($73, Meid2, $081CDC7C)
+Meid2:
+ #incext Png2Dmp Meid2.png --lz77 
+ 
+  SpriteStd($9, 2, 0, doro1)
+doro1:
+#incext Png2Dmp doro1.png --lz77 
+SpriteMov($0E, doro2, $081CDC7C)
+doro2:
+ #incext Png2Dmp doro2.png --lz77  
+ 
+ 
+ SpriteStd($6B, 2, 1, Ono1)       ////斧アーマー待機
+Ono1:
+#incext Png2Dmp Ono1.png --lz77 
+SpriteMov($A, Ono2, $081CDC7C)      /////斧アーマー移動
+Ono2:
+ #incext Png2Dmp Ono2.png --lz77  
+ 
+  SpriteStd($6C, 2, 0, st_shaman_f)       ////女ドルイド待機
+st_shaman_f:
+#incext Png2Dmp st_shaman_f.png --lz77 
+
+ SpriteStd($6D, 2, 0, st_druid_f)       ////女シャーマン待機
+st_druid_f:
+#incext Png2Dmp st_druid_f.png --lz77 
+
+SpriteStd($6E, 2, 1, CavLance)            ///槍ナイト　待機
+CavLance:
+#incext Png2Dmp CavLance.png --lz77
+
+SpriteStd($2, 0, 0, ri3)                ///オフィシエ　待機移動
+ri3:
+#incext Png2Dmp ri3.png --lz77
+SpriteMov($3, ri4, $081CDC7C)
+ri4:
+ #incext Png2Dmp ri4.png --lz77 
+ 
+ SpriteStd($72, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+
+ SpriteStd($73, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+
+ SpriteStd($74, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+ SpriteStd($75, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+
+ SpriteStd($76, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+
+ SpriteStd($77, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+
+ SpriteStd($78, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+
+ SpriteStd($79, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+ SpriteStd($7A, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+
+ SpriteStd($7B, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
+
+ SpriteStd($7C, 2, 0, st_druid_f)       ////空き待機
+#incext Png2Dmp st_druid_f.png --lz77 
 
 
 //////////////////ここまでアイコンデータ

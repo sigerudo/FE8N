@@ -1,6 +1,0 @@
-#include "asm\EA.txt"
-
-{
-#include "Ch10x.event"
-}
-

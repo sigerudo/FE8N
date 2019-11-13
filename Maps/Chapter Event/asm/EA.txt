@@ -1,4 +1,0 @@
- #include "A_Talk\EA.txt"
- #include "EscapeMap\EA.txt"
- #include "woman\EA.txt"
- #include "TheTurn\EA.txt"

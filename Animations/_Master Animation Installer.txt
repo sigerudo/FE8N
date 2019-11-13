@@ -1,25 +1,55 @@
-#define ClassAnimTable (0xc00008-0x20)
+#define ClassAnimTable (0xB46C1C-0x20)
+
+
 #define AnimTableEntry(index) "ORG ClassAnimTable + (index * 0x20)"
-#include "animationpatchesJP.event"
+#include "Animation Hacks\animationpatchesJP.event"
 
 //////////////ここからアニメデータ
 
-#include "Hawkzerker Installer.event"	//0x23新バーサーカー - The Blind Archer
-#include "Axe_General Installer.event"	//0x46新斧ジェネラル - The Blind Archer
-#include "Legaultassassinpaledit_swd Installer.event"	//0x8Dラガルトアサシン - Feaw
-#include "Legaultassassinpaledit_no Installer.event"	//0x8Eラガルトアサシン - Feaw
-#include "Paladin_Staff_M Installer.event"	//0xCA杖パラディン - Primefusion
-#include "FemalePaladinStaves Installer.event"	//0xCB杖パラディンF - Whitewolf8
-#include "Falcoknight_Staff Installer.event"	//0xCC杖ファルコンナイト - shadowofchaos
-#include "armor_sword Installer.event"	//0xCDソードアーマー - The Blind Archer
-#include "armor_axe Installer.event"	//0xCEアクスアーマー - The Blind Archer
-#include "armor_haxe Installer.event"	//0xCF手斧アーマー - The Blind Archer
-#include "Wyvernlordpaledit_axe Installer.event"	//0xD0斧ドラマス - The Blind Archer, Feaw
-#include "Wyvernlordpaledit_haxe Installer.event"	//0xD1手斧ドラマス - The Blind Archer, Feaw
-#include "ragaruto Installer.event"	//0xD2弓ラガルト - ケンプフ
-#include "asasinyumi_Installer.event"	//0xD3弓アサシン - ケンプフ
-#include "StaffRogue Installer.event"	//0xD4杖ローグ - ukulelej
-
+#include "armm_ax1 Installer.event"	//0xCE    新アーマーナイト斧近接
+#include "assassin_bow Installer.event"	//0xD3
+#include "Axe_General Installer.event"	//0x46
+#include "drmm_ono Installer.event"	//0xD0
+#include "Falcoknight_Staff Installer.event"	//0xCC
+#include "pakm_sw2 Installer.event"	//0xCB
+#include "armm_ax2 Installer.event"	//0xCF     //新アーマー手斧
+#include "drmm_teono Installer.event"	//0xD1
+#include "Hawkzerker Installer.event"	//0x23
+#include "rag_bow Installer.event"	//0xD2
+#include "Legaultassassinpaledit_swd Installer.event"	//0x8D
+#include "StaffRogue Installer.event"	//0xD4
+#include "pakm_sw1 Installer.event"	//0xCA
+#include "armm_sw1 Installer.event"	//0xCD         //新アーマー剣
+#include "Legaultassassinpaledit_no Installer.event"	//0x8E
+#include "Rideli Installer.event"	//0x02
+#include "aizakuken Installer.event"	//0xA0　　　下級アイザック剣
+#include "aizakuono Installer.event"	//0xA3　　　下級アイザック斧
+#include "aizakuteono Installer.event"	//0xA1      下級あいざっく手斧
+#include "aizakubukinasi Installer.event"	//0x02　下級アイザック武器なし
+#include "torubanasi Installer.event"	//0x86
+#include "torubatue Installer.event"	//0x85
+#include "yuubokumin Installer.event"	//0xB3
+#include "miranoono Installer.event"	//0xAE
+#include "miranoteono Installer.event"	//0xAF
+#include "unarmed Installer2.event"	//0x09
+#include "Strategist Installer.event"   //0xA2
+#include "yugudora Installer.event"   //0x04
+#include "Barisuta Installer.event"   //0xB4    バリスタ
+#include "lorm_sp1 Installer.event"   //0xA4
+#include "Harbinger Installer.event"   //0xA5
+#include "Harbingermahou Installer.event"   //0xA6
+#include "danf_no1 Installer.event"   //0xA7
+#include "doro Installer.event"   //0xA8
+#include "Rog2M_sp1 Installer.event"   //0xA9
+#include "RogM_sp1 Installer.event"   //0xAA
+#include "MeidTue Installer.event"   //0xAB
+#include "meidoken Installer.event"   //0xB0      メイド剣
+#include "Isaac_ua1 Installer.event"   //0x03      ＣＣ後アイザック非武装
+#include "Isaac_Sword Installer.event"   //0x05      ＣＣ後アイザック剣
+#include "Lizzy_sw1 Installer.event"   //0xC0      オフィシエ　リディ剣
+#include "Ridelibukinasi Installer.event"   //0x56      オフィシエ　リディ武器なし
+#include "Lizzy_sw3 Installer.event"   //0x104      オフィシエ　リディ槍
+#include "Rideli2 Installer.event"   //0x10      オフィシエ　リディ剣（エターナルソード）
 
 //////////////ここまでアニメデータ
 ALIGN 4

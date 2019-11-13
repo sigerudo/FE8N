@@ -1,4 +1,0 @@
-asm_A_Talk:
- #incbin "A_Talk.gba"
-ALIGN 4
-
