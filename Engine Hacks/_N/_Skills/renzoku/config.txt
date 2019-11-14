@@ -1,7 +1,7 @@
 //config
 
 adept_list:
-    BYTE $57 $5C 0
+    BYTE $57 0
 adept_list_w:
     BYTE $00 0
 
