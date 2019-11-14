@@ -51,7 +51,7 @@ DistantDefList: //遠距離防御
 SwordfaireList: //剣の達人
  BYTE $00 0
 LancefaireList: //槍の達人
- BYTE $00 0
+ BYTE $55 0
 AxefaireList: //斧の達人
  BYTE $00 0
 BowfaireList: //弓の達人
