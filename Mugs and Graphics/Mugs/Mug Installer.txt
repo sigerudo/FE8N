@@ -171,7 +171,7 @@ oruga:
 varumon:
   #incext PortraitFormatter varumon.png
  
- setMugEntry($19, haguro,2, 6, 3, 4, 1)
+ setMugEntry($19, haguro,2, 6, 4, 4, 1)
 //setMugExtra($19, 0, 4, 10, 4)
 haguro:
   #incext PortraitFormatter haguro.png
