@@ -1,4 +1,4 @@
 GenocideList:
     BYTE $00 0
 GenocideList_w:
-    BYTE $85 0
+    BYTE $00 0
