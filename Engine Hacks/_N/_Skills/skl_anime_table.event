@@ -18,7 +18,7 @@
 
 skl_anime_table:
 POIN	0 //0
-POIN	0 //Skill_ID 1
+POIN	0x9B63920 //Skill_ID 1 ëÂèÇ
 POIN	0 //Skill_ID 2
 POIN	0
 POIN	0
@@ -34,7 +34,7 @@ POIN	0
 POIN	0
 POIN	0
 POIN	0
-POIN	0
+POIN	0x9B63920Å@//êπèÇ
 POIN	0
 POIN	0
 POIN	0 //20
