@@ -18,7 +18,11 @@
 
 skl_anime_table:
 POIN	0 //0
+<<<<<<< HEAD
 POIN	0x9B63920 //Skill_ID 1 ‘å‚
+=======
+POIN	0 //Skill_ID 1
+>>>>>>> 223a8224cfc9c8a476f654f473dca9e465d4de5d
 POIN	0 //Skill_ID 2
 POIN	0
 POIN	0
@@ -34,7 +38,11 @@ POIN	0
 POIN	0
 POIN	0
 POIN	0
+<<<<<<< HEAD
 POIN	0x9B63920@//¹‚
+=======
+POIN	0
+>>>>>>> 223a8224cfc9c8a476f654f473dca9e465d4de5d
 POIN	0
 POIN	0
 POIN	0 //20
