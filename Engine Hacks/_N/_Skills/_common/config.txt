@@ -6,5 +6,5 @@ OccultList_u:	//奥義の書
 OccultList_c:
     BYTE $00 0
 OccultList_i:
-    BYTE $00 0
+    BYTE $EE 0
 
