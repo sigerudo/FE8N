@@ -47,7 +47,7 @@ uuuuu:
   #incext PortraitFormatter uuuuu.png 
 
 
-setMugEntry($05, eee, 2, 5, 3, 3, 1)
+setMugEntry($05, eee, 3, 5, 3, 3, 1)  ///バッカス
 //setMugExtra($05, 0, 2, 5, 2)
 eee:
   #incext PortraitFormatter eee.png 
