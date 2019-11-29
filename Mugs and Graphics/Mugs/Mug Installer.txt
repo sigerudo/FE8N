@@ -329,5 +329,26 @@ setMugEntry($AD, uuuuu, 2, 5, 3, 3, 1)
 //setMugExtra($AD, 0, 2, 5, 2)
 
 
+setMugEntry($47, Harutoman, 3, 5, 2, 3, 1)     //ハルトマン顔画像
+//setMugExtra($47, 0, 2, 5, 2)
+Harutoman:
+  #incext PortraitFormatter Harutoman.png  
+
+setMugEntry($BD, boss2, 3, 5, 3, 3, 1)     //タイター顔画像
+//setMugExtra($BD, 0, 2, 5, 2)
+boss2:
+  #incext PortraitFormatter boss2.png  
+
+setMugEntry($BE, boss3, 3, 5, 3, 3, 1)     //ボーグ顔画像
+//setMugExtra($BE, 0, 2, 5, 2)
+boss3:
+  #incext PortraitFormatter boss3.png  
+  
+setMugEntry($BF, boss4, 3, 5, 3, 3, 1)     //ホーバス顔画像
+//setMugExtra($BF, 0, 2, 5, 2)
+boss4:
+  #incext PortraitFormatter boss4.png  
+
+
 
 //////////////////////////縺薙％縺ｾ縺ｧ鬘皮判蜒
