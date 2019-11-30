@@ -103,7 +103,7 @@ notDeath:
 	mov r1, #WAR_ADR
 	ldrb r0, [r2, r1]
 	cmp r0, #0xFF
-	beq TRUE	@発動率100%
+@	beq TRUE	@発動率100%
 skipWar:
 @■ジェノサイド判定
 	ldrb r0, [r3, #11]
@@ -245,7 +245,7 @@ isDeath:
 	mov r1, #WAR_FLAG
 	and r0, r1
 	cmp r0, r1
-	bne falseDeath	@戦技ではないなら不発
+@	bne falseDeath	@戦技ではないなら不発
 	
 	mov r0, #1
 	b endDeath
