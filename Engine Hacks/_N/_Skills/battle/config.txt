@@ -76,7 +76,7 @@ CounterList_class:	//応撃
  BYTE $00 0
 
 SunderList_unit:	//両断
- BYTE $00 0
+ BYTE $21 0
 
 
 
