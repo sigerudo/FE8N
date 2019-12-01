@@ -166,7 +166,7 @@ ariana:
 oruga:
   #incext PortraitFormatter oruga.png
  
-  setMugEntry($23, varumon,2, 5, 3, 3, 1)
+  setMugEntry($23, varumon,3, 5, 3, 3, 1)      ///ƒ”ƒ@ƒ‹ƒJƒ“
 //setMugExtra($23, 0, 4, 10, 4)
 varumon:
   #incext PortraitFormatter varumon.png
