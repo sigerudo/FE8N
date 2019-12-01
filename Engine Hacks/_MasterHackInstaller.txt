@@ -16,6 +16,7 @@
 	#include "Fire_Dragon\Fire_Dragon_Data.txt"
 	#include "DanceAi\DanceAi.event"
 	#include "ChangeItemSellPrice\Sell_Price_expansion.event"
+	#include "ChangePortrait\PATCH_Fix EnemyCapture_GetUnitPortraitId.txt"
 //	#include "256 colors titlebackground\titlebackgroundinstaller.event"
 //	#include "EVENTSCRIPT_Show_map_emotion\Show_map_emotion_Install.event"
 
