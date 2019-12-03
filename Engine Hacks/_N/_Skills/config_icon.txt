@@ -355,7 +355,7 @@
 #define SKL_HELP_118 $0F5F  //Ž‚Žq˜AŽa
  #define SKL_COLOR_118 0
 
-#define SKL_HELP_119 $057C
+#define SKL_HELP_119 $0F6A  //••–‚
  #define SKL_COLOR_119 $FF
 
 #define SKL_HELP_120 $0000
