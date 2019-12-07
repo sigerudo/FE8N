@@ -1,7 +1,7 @@
 #include config.txt
 ALIGN 4
 
-#define GENOCIDE_WORK_ADR (0x0203a5e8) //完全に置換しきれていない
+#define GENOCIDE_WORK_ADR (0x0203a5e8)
 
 PUSH
    ORG 0x02ae54
@@ -22,6 +22,7 @@ POP
     
 xeno_red:
     #incbin red.dmp
+    WORD GENOCIDE_WORK_ADR
 ALIGN 4
 xeno_main:
     #incbin main.dmp
@@ -31,20 +32,23 @@ xeno_main:
     POIN hasReverseXeno
     POIN set_skillanime_attack
     POIN set_skillanime_defence
+    WORD GENOCIDE_WORK_ADR
 xeno_light:
     #incbin light.dmp
+    WORD GENOCIDE_WORK_ADR
 ALIGN 4
 xeno_back:
     #incbin back.dmp
+    WORD GENOCIDE_WORK_ADR
 ALIGN 4
 hasXeno:
-    HAS_SKILL
+    HAS_NIHIL
     WORD GenocideID
 hasReverseXeno:
-    HAS_SKILL
+    HAS_NIHIL
     WORD ReverseGenocideID
 hasCharge:
-    HAS_SKILL
+    HAS_NIHIL
     WORD ChargeID
     
 non_yellow_when_shield:
