@@ -15,7 +15,7 @@ listStone: //叫喚
     BYTE $49 $37 0
 listFlower: //華炎
     BYTE $29 $2A 0
-WardArrowList_class: //封魔
+MagicBindList_class: //封魔
     BYTE $00 0
 
 
