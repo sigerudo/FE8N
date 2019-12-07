@@ -4,5 +4,5 @@ HealList_Item:
 	BYTE $F0 0
 
 ImbueList:
-    BYTE $00 0
+    BYTE $7C 0
 
