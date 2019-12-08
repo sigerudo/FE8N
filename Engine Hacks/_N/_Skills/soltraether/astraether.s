@@ -277,8 +277,8 @@ ouiAstra:
     mov r1, #ORACLE_FLAG
     mov r10, r1	@奥義目印
 
-    ldrb r0, [r7, #21]	@技
-@	ldrb r0, [r7, #8]	@レベル
+@    ldrb r0, [r7, #21]	@技
+	ldrb r0, [r7, #8]	@レベル
 	mov	r1, #0
 	bl	random	@発動乱数
 	cmp	r0, #1
@@ -371,8 +371,8 @@ TENKU:
 jump:
     mov r1, #ORACLE_FLAG	@奥義目印
     mov r10, r1
-    ldrb r0, [r7, #21]	@技
-@    ldrb r0, [r7, #8]	@レベル
+@    ldrb r0, [r7, #21]	@技
+    ldrb r0, [r7, #8]	@レベル
     mov r1, #0
     bl random
     cmp r0, #0
@@ -381,8 +381,8 @@ jump:
     mov r0, r8
     ldrb r0, [r0, #0x17] @守備
 
-@    bl divEight @8割減
-    asr r0, r0, #1  @半減
+    bl divEight @8割減
+@    asr r0, r0, #1  @半減
 
     mov r1, #4
     ldsh r1, [r5, r1] @ダメージ
