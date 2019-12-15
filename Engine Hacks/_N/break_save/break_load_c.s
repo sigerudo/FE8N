@@ -1,5 +1,7 @@
-@thumb
-@org $080aab5e
+BASE_ADR = (0x080aab5e)
+
+.thumb
+.org 0x080aab5e-BASE_ADR
 
 	mov	r7, sp
 	mov	r5, sp
@@ -23,6 +25,8 @@
 	ldrb	r0, [r7, #14]
 	strb	r0, [r6, #18]
 	ldrb	r0, [r7, #15]
+	lsl r0, r0, #25	@HPの最上位ビットを落とす
+	lsr r0, r0, #25	@HPの最上位ビットを落とす
 	strb	r0, [r6, #19]
 	lsl	r0, r2, #9
 	lsr	r0, r0, #26
@@ -43,16 +47,16 @@
 	lsr	r0, r0, #26
 	strb	r0, [r6, #24]
 	
-	ldrb	r1, [r7, #24]	;幸運+体格
+	ldrb	r1, [r7, #24]	@幸運+体格
 	lsl	r0, r1, #26
 	lsr	r0, r0, #26
-	strb	r0, [r6, #25]	;幸運
+	strb	r0, [r6, #25]	@幸運
 	lsr	r1, r1, #7
 	lsl	r1, r1, #5
 	lsl	r0, r2, #12
 	lsr	r0, r0, #27
 	orr	r0, r1
-	strb	r0, [r6, #26]	;体格
+	strb	r0, [r6, #26]	@体格
 	
 	ldrb	r0, [r5, #16]
 	lsl	r0, r0, #25
@@ -72,7 +76,7 @@
 	mov	r8, r0
 	and	r0, r1
 	cmp	r0, #0
-	@dcw $d001
+	.short 0xd001
 	mov	r0, #8
 	orr	r2, r0
 	ldrh	r0, [r5, #16]
@@ -103,8 +107,7 @@
 	and	r0, r2
 	strb	r0, [r6, #28]
 	ldrh	r5, [r7, #8]
-@align 4
-	ldr	r1, [$080aad84]
+	ldr	r1, pointer
 	mov	r0, r1
 	and	r0, r5
 	strh	r0, [r6, #30]
@@ -160,27 +163,27 @@
 	str	r2, [r6, #0]
 	str	r2, [r6, #4]
 	ldrh	r3, [r7, #18]
-;いち
+@いち
 	ldrb	r0, [r7, #20]
 	cmp	r0, #0
 	beq	end
 	lsr	r1, r3, #13
 	strb	r0, [r6, r1]
-;に
+@に
 	ldrb	r0, [r7, #21]
 	cmp	r0, #0
 	beq	end
 	lsl r1, r3, #19
 	lsr	r1, r1, #29
 	strb	r0, [r6, r1]
-;さん
+@さん
 	ldrb	r0, [r7, #22]
 	cmp	r0, #0
 	beq	end
 	lsl r1, r3, #22
 	lsr	r1, r1, #29
 	strb	r0, [r6, r1]
-;よん
+@よん
 	ldrb	r0, [r7, #23]
 	cmp	r0, #0
 	beq	end
@@ -194,7 +197,7 @@ end:
 	ldrb	r0, [r7, #25]
 	orr r0, r1
 	sub	r6, #40
-	strh	r0, [r6, #0x3A]	;
+	strh	r0, [r6, #0x3A]	@
 	
 	
 	mov	r1, #66
@@ -211,4 +214,19 @@ end:
 	add	r3, #26
 	mov	r4, r6
 	add	r4, #50
-	b	$080aad00
+@new(現在HPの最上位1bitをレベルとする)
+	ldrb r0, [r6, #8]
+	mov r1, sp
+	ldrb r1, [r1, #15]	@現在HP
+	lsr r1, r1, #7
+	lsl r1, r1, #5
+	orr r0, r1
+	strb r0, [r6, #8]
+	nop
+@	b 0x080aad00
+.align
+.ltorg
+
+.org 0x080aad84-BASE_ADR
+.align
+pointer:
