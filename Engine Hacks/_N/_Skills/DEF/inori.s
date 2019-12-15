@@ -251,7 +251,8 @@ Pray:
     ldrb r0, [r3, r0]	@現在HP
     mov r1, #0x12
     ldrb r1, [r3, r1]	@最大HP
-    lsl r0, r0, #1
+	mov r2, #3
+	mul r0, r2
     cmp r0, r1
     blt falsePray
 	
