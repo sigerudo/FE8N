@@ -14,22 +14,9 @@ SET_SKILLANIME_DEF_FUNC = (adr+20)
 	ldsh r0, [r4, r1]
 	cmp r0, #0
 	ble zero
-	
-	mov r0, r8
-	ldrb r0, [r0, #0xB]
-		ldr r1, =0x08019108
-		mov lr, r1
-		.short 0xF800
-	cmp r0, #0
-	beq end	@壁
-	
-	bl DistantGuard @遠距離無効
+bl DistantGuard @遠距離無効
 	cmp r0, #0
 	bne zero
-	
-	bl Amulet
-	cmp r0, #1
-	beq end
 	
 	mov r1, r10
 	cmp r1, #0xDE
@@ -52,8 +39,10 @@ SET_SKILLANIME_DEF_FUNC = (adr+20)
 	bl Pray
 	cmp r0, #1
 	beq end
-	bl Xeno
-
+	
+	bl Amulet
+	cmp r0, #1
+	beq end
 @半減
 	bl BigShield
 	cmp r0, #1
@@ -63,6 +52,7 @@ SET_SKILLANIME_DEF_FUNC = (adr+20)
 	cmp r0, #1
 	beq end
 bl Oracle
+bl Xeno
 	b end
 
 zero:
@@ -251,8 +241,7 @@ Pray:
     ldrb r0, [r3, r0]	@現在HP
     mov r1, #0x12
     ldrb r1, [r3, r1]	@最大HP
-	mov r2, #3
-	mul r0, r2
+    lsl r0, r0, #1
     cmp r0, r1
     blt falsePray
 	
@@ -375,7 +364,9 @@ Xeno:
 	ldrb r1, [r1]
 	cmp r0, r1
 	bne endXeno @不発
-	ldrh r0, [r4, #4]
+@	ldrh r0, [r4, #4]
+@	lsr r0, r0, #1
+@	strh r0, [r4, #4]
 	ldrb r1, [r2, #19]	@現在HP
 @一撃で死ぬか
 	cmp r0, r1
