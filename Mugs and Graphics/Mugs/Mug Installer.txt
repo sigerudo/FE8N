@@ -349,6 +349,9 @@ setMugEntry($BF, boss4, 3, 5, 3, 3, 1)     //ホーバス顔画像
 boss4:
   #incext PortraitFormatter boss4.png  
 
-
+setMugEntry($1D, Don, 2, 5, 2, 3, 1)     //ドンキホーテ顔画像
+//setMugExtra($1D, 0, 2, 5, 2)
+Don:
+  #incext PortraitFormatter Don.png  
 
 //////////////////////////縺薙％縺ｾ縺ｧ鬘皮判蜒
