@@ -14,5 +14,5 @@ listEclipse: //月食
 listJihad:
     BYTE $75 $00 0
 listJihad_w:
-    BYTE $00 $00 0
+    BYTE $C3 $00 0
     
