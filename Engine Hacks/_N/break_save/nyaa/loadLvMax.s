@@ -3,6 +3,7 @@
 @080a7d1c
 
 main:
+    bx lr
     push {r4, r5, lr}
     mov r4, #0
 loop:
