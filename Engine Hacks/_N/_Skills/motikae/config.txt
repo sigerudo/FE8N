@@ -1,5 +1,0 @@
-QuickChangeList_class:
-    BYTE $7B $74 0
-
-
-

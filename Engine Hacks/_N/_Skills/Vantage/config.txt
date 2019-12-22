@@ -1,8 +1,0 @@
-//config
-
-VantageList:
- BYTE	$29 $2A 0
-
-VantageList_w:
- BYTE	$C7 0
-

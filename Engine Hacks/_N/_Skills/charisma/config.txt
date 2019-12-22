@@ -1,5 +1,0 @@
-fearList:
-    BYTE $02 $04 $76 0
-
-charmList:
-    BYTE $7B $04 $76 $03 0
