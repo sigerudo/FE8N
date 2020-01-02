@@ -3,7 +3,7 @@ skill_117_unit:
 skill_117_class:
    BYTE $00 $00 0 
 skill_117_weapon:
-   BYTE $85 0
+   BYTE $00 0
 skill_117_item:
    BYTE $00 $00 0 
 #define SKL_HELP_117 $0000
