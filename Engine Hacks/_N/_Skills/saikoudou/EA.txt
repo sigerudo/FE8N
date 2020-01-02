@@ -124,7 +124,10 @@ pulse_impl:
         POIN hasLifetaker
         POIN hasCantoPlus
         POIN hasGaleCause
-        
+
+    hasRagingStorm:
+        HAS_NIHIL
+        WORD RagingStormID
     hasRemove:
         HAS_SKILL
         WORD RemoveID

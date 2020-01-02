@@ -47,6 +47,7 @@ battle_before:
     POIN hasLightfaire
     POIN hasDarkfaire
     POIN hasBond
+    POIN hasAtrocity
     
 battle_after:
     #incbin main.dmp
@@ -64,8 +65,13 @@ battle_down:
   POIN hasCounter
   POIN hasDoubleLion
   POIN hasSavageBlow
+  POIN hasRagingStorm
+
   
-  
+hasAtrocity:
+    HAS_NIHIL
+    WORD AtrocityID
+
 hasSavageBlow:
     HAS_NIHIL
     WORD SavageBlowID
