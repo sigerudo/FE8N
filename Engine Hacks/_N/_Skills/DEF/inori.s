@@ -3,7 +3,6 @@
 HAS_BIG_SHIELD_FUNC = (adr+0)
 HAS_HOLY_SHIELD_FUNC = (adr+4)
 HAS_GOD_SHIELD_FUNC = (adr+8)
-HAS_INORI_FUNC = (adr+12)
 HAS_NIHIL_FUNC = (adr+16)
 SET_SKILLANIME_DEF_FUNC = (adr+20)
 
@@ -97,9 +96,7 @@ WaryFighter:
 		cmp r0, #1
 		beq falseWaryFighter
 
-		mov r0, r8
-		mov r1, r7
-		bl hasWaryFighter
+		bl JudgeWaryFighter
 		cmp r0, #0
 		beq falseWaryFighter
 		
@@ -116,6 +113,29 @@ WaryFighter:
 		mov	r0, #0
 	endWaryFighter:
 		pop	{pc}
+
+JudgeWaryFighter:
+		push {lr}
+		mov r0, r8
+        ldrb r0, [r0, #0xb]
+        ldr r1, =0x03004df0
+        ldr r1, [r1]
+        ldrb r1, [r1, #0xb]
+        cmp r0, r1
+        beq nextWaryFighter
+
+		mov r0, r8
+		mov r1, r7
+		bl HasWaryFighter
+		b activeWaryFighter
+	nextWaryFighter:
+		mov r0, r7
+		mov r1, r8
+		bl HasWaryFighter
+	activeWaryFighter:
+		pop {pc}
+
+
 
 
 Invincible:
@@ -256,13 +276,16 @@ BigShield:
 	mov	r3, r8
 	mov	r0, #0x50
 	ldrb	r0, [r7, r0]	@魔法判定
-	cmp	r0, #7
-	beq	falseShield
-	cmp	r0, #6
-	beq	falseShield
-	cmp	r0, #5
-	beq	falseShield
-	
+	cmp	r0, #0
+	beq	ouiShield
+	cmp	r0, #1
+	beq	ouiShield
+	cmp	r0, #2
+	beq	ouiShield
+	cmp	r0, #3
+	beq	ouiShield
+	b falseShield
+ouiShield:
 	ldrb	r0, [r3, #21]	@技
 	mov	r1, #0
 	bl	random
@@ -309,13 +332,14 @@ HolyShield:
 	mov	r3, r8
 	mov	r0, #0x50
 	ldrb	r0, [r7, r0]	@物理判定
-	cmp	r0, #7
-	beq	ouiHoly
-	cmp	r0, #6
-	beq	ouiHoly
-	cmp	r0, #5
-	beq	ouiHoly
-	b falseHoly
+	cmp	r0, #0
+	beq	falseHoly
+	cmp	r0, #1
+	beq	falseHoly
+	cmp	r0, #2
+	beq	falseHoly
+	cmp	r0, #4
+	beq	falseHoly
 ouiHoly:
 	ldrb	r0, [r3, #21]	@技
 	mov	r1, #0
@@ -323,7 +347,10 @@ ouiHoly:
 	cmp	r0, #0
 	beq	falseHoly
 	ldrh	r0, [r4, #4]
-	mov r0, #0
+	asr	r0, r0, #1
+	bne jumpHoly
+	mov r0, #1
+jumpHoly:
 	strh	r0, [r4, #4]
 	
     mov r0, r8
@@ -343,35 +370,25 @@ falseHoly:
 	
 Pray:
 	push {lr}
-	mov r0, r8
-		ldr r1, HAS_INORI_FUNC @祈り
-		mov lr, r1
-		.short 0xF800
-	cmp r0, #0
-	beq	falsePray
 
 	bl checkSkip
 	cmp r0, #1
 	beq falsePray
-
 	mov r3, r8
-    mov r0, #0x13
-    ldrb r0, [r3, r0]	@現在HP
-    cmp r0, #1
-    beq falsePray
-	
 	ldrb r1, [r3, #19]
 	ldrh r0, [r4, #4]
 	cmp r0, r1
 	blt falsePray @一撃で死なないなら終了
 	
-	mov r0, r7
-		ldr r1, HAS_NIHIL_FUNC
-		mov lr, r1
-		.short 0xF800
+	bl JudgePray
 	cmp r0, #1
-	beq falsePray @見切り持ちなら終了
+	beq getPray
 
+	bl JudgePrayOld
+	cmp r0, #1
+	bne falsePray
+
+getPray:
 @祈り効果
 	mov	r0, r8
 	ldrb	r0, [r0, #19]
@@ -392,6 +409,42 @@ falsePray:
 endPray:
 	pop	{pc}
 
+
+JudgePray:
+		push {lr}
+		mov r0, r8
+		mov r1, r7
+		bl HasPray
+		cmp r0, #0
+		beq	inactivePray
+		mov r3, r8
+    	mov r0, #0x13
+    	ldrb r0, [r3, r0]	@現在HP
+    	mov r1, #0x12
+    	ldrb r1, [r3, r1]	@最大HP
+    	lsl r0, r0, #1
+    	cmp r0, r1
+    	blt inactivePray
+		b activePray
+
+JudgePrayOld:
+		mov r0, r8
+		mov r1, r7
+		bl HasPrayOld
+		cmp r0, #0
+		beq	inactivePray
+		mov r3, r8
+    	mov r0, #0x13
+    	ldrb r0, [r3, r0]	@現在HP
+		cmp r0, #1
+		ble inactivePray
+
+	activePray:
+		mov r0, #1
+		pop {pc}
+	inactivePray:
+		mov r0, #0
+		pop {pc}
 
 Oracle:
 	push	{lr}
@@ -494,16 +547,26 @@ Xeno:
 	endXeno:
 		bx lr
 
+HAS_INORI_FUNC = (adr+12)
 HAS_INVINCIBLE_FUNC = (adr+28)
 HAS_WARYFIGHTER_FUNC = (adr+36)
+HAS_INORI_OLD_FUNC = (adr+40)
 
 hasInvincible:
 	ldr	r2, HAS_INVINCIBLE_FUNC
 	mov	pc, r2
 
-hasWaryFighter:
-	ldr	r2, HAS_WARYFIGHTER_FUNC
-	mov	pc, r2
+HasPray:
+ldr r2, HAS_INORI_FUNC @祈り
+mov pc, r2
+
+HasPrayOld:
+ldr r2, HAS_INORI_OLD_FUNC @旧祈り
+mov pc, r2
+
+HasWaryFighter:
+ldr	r2, HAS_WARYFIGHTER_FUNC
+mov	pc, r2
 
 random:
 	ldr	r2, =0x0802a490
