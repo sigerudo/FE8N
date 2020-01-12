@@ -24,7 +24,7 @@ SHORT	$2000
 
 POP
 magic_strong:
-#incbin StatusUp.dmp
+#incbin "..\..\_N\StatusUp\StatusUp.dmp"
 POIN magicn_end	//戻りアドレス
 POIN StrengthWp
 POIN SwordfaireFunc
