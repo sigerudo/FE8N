@@ -26,7 +26,7 @@ setMugEntry($1E, kuroe, 3, 6, 3, 4, 1)
 kuroe:
   #incext PortraitFormatter kuroe.png  
 
-setMugEntry($32, eeee, 2, 5, 3, 4, 1)
+setMugEntry($32, eeee, 2, 5, 2, 3, 1)    ////ÉmÉAÅ[Éã
 //setMugExtra($32, 0, 2, 5, 2)
 eeee:
   #incext PortraitFormatter eeee.png  
