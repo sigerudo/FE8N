@@ -28,11 +28,11 @@ battle_before:
     POIN hasCloseDef
     POIN hasDistantDef
     POIN hasDefender
+    POIN HasBladeSession
+    POIN HasShieldSession
     POIN 0
     POIN 0
-    POIN 0
-    POIN 0
-    POIN 0
+    POIN waryFighter_hasSkill
     POIN hasGrounder
     POIN hasHelmSplitter
     POIN hasKnightkneeler
@@ -66,6 +66,13 @@ battle_down:
   POIN hasDoubleLion
   POIN hasSavageBlow
   POIN hasRagingStorm
+
+HasBladeSession:
+    HAS_NIHIL
+    WORD BladeSessionID
+HasShieldSession:
+    HAS_NIHIL
+    WORD ShieldSessionID
 
 HasDaunt:
     HAS_NIHIL
