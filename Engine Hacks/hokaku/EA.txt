@@ -1,7 +1,7 @@
 PUSH
 
 ORG		0x252f4
-	#incbin "hokaku.gba"	///////////////ここを変える
+	#incbin "hokaku_f.gba"	///////////////ここを変える
 	
 
 ORG		0x180cc
