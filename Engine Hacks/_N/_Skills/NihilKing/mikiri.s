@@ -310,7 +310,7 @@ judgeDeath:
 	mov r1, #WAR_FLAG
 	and r0, r1
 	cmp r0, r1
-	bne falseDeath	@戦技ではないなら不発
+@	bne falseDeath	@戦技ではないなら不発
 	
 	mov r0, #1
 	b endDeath
