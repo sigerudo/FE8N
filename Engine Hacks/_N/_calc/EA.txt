@@ -24,24 +24,28 @@ ORG 0x02a9dc
 ORG 0x02acf0
 jumpToHack(MagicDefDivide)
 
-///////////////Sランク補正
-ORG	0x02acc8
-	jumpToHack(weapon_bonus)
+///////////////武器レベル補正
+ORG	0x02acc4
+	jumpToHack(weapon_bonus_func)
 
 ///////////////level_down
 
 ORG 0x075bb6	//CC画面の処理(実際の減少処理は別にある)
 	SHORT $7A18
 
-
 POP
+
+weapon_bonus_func:
+	#incbin weapon_bonus.dmp
+//	POIN weapon_bonus_original
+//	POIN weapon_bonus_three_house
+	POIN weapon_bonus_N
+	POIN 0 //末尾
 
 MagicDefDivide:
 #incbin DefDivide.dmp
 POIN ChangeMagic
 
-weapon_bonus:
-	#incbin weapon_bonus.dmp
-ALIGN 4
 
+#include "weapon_bonus\EA.txt"
 

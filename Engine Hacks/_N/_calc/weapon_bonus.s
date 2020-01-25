@@ -16,56 +16,30 @@ LEVEL_S = (6)
 
 @0802acc8
 .thumb
-	mov r0, #0x50
-	ldrb r0, [r4, r0]
-	cmp r0, #SWORD
-	beq typeA
-	cmp r0, #LANCE
-	beq typeB
-	cmp r0, #AXE
-	beq typeC
-	cmp r0, #BOW
-	beq typeB
-	cmp r0, #STAFF
-	beq typeA
-	cmp r0, #ANIMA
-	beq typeC
-	cmp r0, #LIGHT
-	beq typeA
-	cmp r0, #DARK
-	beq typeC
-	b end
-typeA:
-typeB:
-typeC:
-	add	r0, r4
-	add	r0, #40
-	ldrb	r0, [r0]
-	bl Get_WpLv
-	mov r3, r0
-	mov r0, #0
-	mov r1, #0
-	mov r2, #0
 	
-	cmp r3, #LEVEL_S
-	blt end
-	
-	mov r1, #90
-	ldrh r0, [r4, r1]
-	add r0, #1
-	strh r0, [r4, r1] @é©ï™
-	mov r1, #96
-	ldrh r0, [r4, r1]
-	add r0, #10
-	strh r0, [r4, r1] @é©ï™
-	
-end:
-	pop	{r4}
-	pop	{r0}
-	bx	r0
-	
-Get_WpLv:
-	ldr r1, =0x08016b04
-	mov pc, r1
-	
-	
+        push {r4, r5, lr}
+        mov r4, r0
+.align
+calc_addr:
+        mov r5, #ADDR-calc_addr-10   @„Åô„ÅêÂæå„ÅßÊ∏õÁÆó„Åô„Çã„ÅÆ„Åß6„Åß„ÅØ„Å™„Åè10
+        add r5, pc
+
+@        sub r5, #4
+    loop:
+        add r5, #4
+        ldr r3, [r5]
+        cmp r3, #0
+        beq END
+
+        bl GoToR3
+        b loop
+    END:
+        pop {r4, r5, pc}
+
+GoToR3:
+nop
+mov pc, r3
+
+.align
+.ltorg
+ADDR:
