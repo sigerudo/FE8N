@@ -21,7 +21,7 @@ main:
 
         mov r1, #DEFEATED
         and r0, r1
-        bne end
+        beq end
         asr r5, r5, #1
     end:
         pop {pc}
