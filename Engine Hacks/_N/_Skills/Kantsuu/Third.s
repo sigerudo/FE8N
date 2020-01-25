@@ -54,6 +54,12 @@ MasterySkill:
 		bl Flower
 		cmp r0, #1
 		beq endMasterySkill
+		bl Stan
+		cmp r0, #1
+		beq endMasterySkill
+		bl Stone
+		cmp r0, #1
+		beq endMasterySkill
 		nop
 	endMasterySkill:
 		pop {pc}
@@ -86,12 +92,12 @@ WarSkill:
 		cmp r0, #1
 		beq endWarSkill @見切り持ち
 
-		bl Stan
-		cmp r0, #1
-		beq endWarSkill
-		bl Stone
-		cmp r0, #1
-		beq endWarSkill
+@		bl Stan
+@		cmp r0, #1
+@		beq endWarSkill
+@		bl Stone
+@		cmp r0, #1
+@		beq endWarSkill
 		bl MagicBind
 		cmp r0, #1
 		beq endWarSkill
@@ -289,7 +295,15 @@ Stan:
         .short 0xF800
     cmp r0, #0
     beq endWar
-	
+    mov r1, #ORACLE_FLAG
+    mov r10, r1
+    ldrb r0, [r7, #8]	@Lv
+    mov r1, #0
+    bl random
+    cmp r0, #0
+    beq endWar
+	mov r0, #6
+	add	r9, r0
 	mov	r1, r8
 	add	r1, #111
 	mov	r0, #0x24		@@状態異常(2スリプ,3サイレス,4バサク,Bストン)
@@ -305,7 +319,16 @@ Stone:
         .short 0xF800
     cmp r0, #0
     beq endWar
-	
+    mov r1, #ORACLE_FLAG
+    mov r10, r1
+    ldrb r0, [r7, #8]	@Lv
+    mov r1, #0
+    bl random
+    cmp r0, #0
+    beq endWar
+	mov r0, #6
+	add	r9, r0
+
 	mov	r1, r8
 	add	r1, #111
 	mov	r0, #0x1B		@@状態異常(2スリプ,3サイレス,4バサク,Bストン)
