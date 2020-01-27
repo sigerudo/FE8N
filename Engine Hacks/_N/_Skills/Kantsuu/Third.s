@@ -277,6 +277,17 @@ Stan:
     beq endWar
 	mov r0, #6
 	add	r9, r0
+		mov	r0, r8
+		bl FodesFunc
+		beq	endWar
+		mov r0, r8
+		ldr r1, [r0]
+		ldr	r1, [r1, #40]
+		ldr r2, [r0, #4]
+		ldr	r2, [r2, #40]
+		orr	r1, r2
+		lsl	r1, r1, #16
+		bmi	endWar		@敵将に無効
 	mov	r1, r8
 	add	r1, #111
 	mov	r0, #0x24		@@状態異常(2スリプ,3サイレス,4バサク,Bストン)
@@ -300,7 +311,17 @@ Stone:
     beq endWar
 	mov r0, #6
 	add	r9, r0
-
+		mov	r0, r8
+		bl FodesFunc
+		beq	endWar
+		mov r0, r8
+		ldr r1, [r0]
+		ldr	r1, [r1, #40]
+		ldr r2, [r0, #4]
+		ldr	r2, [r2, #40]
+		orr	r1, r2
+		lsl	r1, r1, #16
+		bmi	endWar		@敵将に無効
 	mov	r1, r8
 	add	r1, #111
 	mov	r0, #0x1B		@@状態異常(2スリプ,3サイレス,4バサク,Bストン)
