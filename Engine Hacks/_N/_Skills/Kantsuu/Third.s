@@ -277,6 +277,9 @@ Stan:
     beq endWar
 	mov r0, #6
 	add	r9, r0
+    mov r0, r7
+    ldr r1, HAS_STUN_FUNC
+    bl SetAtkSkillAnimation
 		mov	r0, r8
 		bl FodesFunc
 		beq	endWar
@@ -311,6 +314,9 @@ Stone:
     beq endWar
 	mov r0, #6
 	add	r9, r0
+    mov r0, r7
+    ldr r1, HAS_SCREAM_FUNC
+    bl SetAtkSkillAnimation
 		mov	r0, r8
 		bl FodesFunc
 		beq	endWar
