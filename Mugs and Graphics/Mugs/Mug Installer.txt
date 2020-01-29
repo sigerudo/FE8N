@@ -360,4 +360,9 @@ Der20:
   #incext PortraitFormatter Der20.png  
 
 
+setMugEntry($C0, Hestea, 3, 6, 3, 4, 1)     //ヘスティア顔画像
+//setMugExtra($27, 0, 2, 5, 2)
+Hestea:
+  #incext PortraitFormatter Hestea.png  
+
 //////////////////////////縺薙％縺ｾ縺ｧ鬘皮判蜒
