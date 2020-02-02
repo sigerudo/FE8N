@@ -35,7 +35,7 @@ SpriteMov($02, icon_aizakku_mv, $081CDC7C)
  
  
  
-SpriteStd($03, 2, 2, izack1)       ////上級アイザック　待機
+SpriteStd($03, 2, 1, izack1)       ////上級アイザック　待機
 izack1:
 #incext Png2Dmp izack1.png --lz77 
 
