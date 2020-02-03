@@ -47,7 +47,10 @@ DEFEAT2 = (0xC0)
     beq clearFALSE @待機選択なら終了
     cmp r0, #17
     beq clearFALSE @制圧選択なら終了
-
+@暫定修正▼
+    cmp r0, #0x1E
+    beq FALSE
+@暫定修正▲
     mov r0, r4
     ldr r1, =DEF
     bl kaifuku
