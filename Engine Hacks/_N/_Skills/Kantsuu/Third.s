@@ -1,6 +1,5 @@
 .thumb
-@org	0x08E4B3C0
-@@月光処理を独立
+@org	0x0802B3D8
 
 STR_ADR = (67)	@書き込み先(AI1カウンタ)
 WAR_FLAG = (0xFF)	@フラグ
@@ -107,7 +106,10 @@ Revenge:
 	ldrb r0, [r7, #19]
 	sub r0, r1, r0
 	asr	r0, r0, #1
-	add	r9, r0
+
+    ldrh r1, [r5, #6]
+    add r1, r0
+    strh r1, [r5, #6]
 
     mov r0, r7
     ldr r1, HAS_VENGEANCE_FUNC
@@ -130,9 +132,10 @@ Dragon:
     cmp r0, #0
     beq endDragon
 
-	mov	r0, r9
-	asr	r0, r0, #1
-	add	r9, r0
+    ldrh r0, [r5, #6]
+    asr r1, r0, #1
+    add r1, r0
+    strh r1, [r5, #6]
 
     mov r0, r7
     ldr r1, HAS_DRAGON_FUNC
@@ -166,7 +169,10 @@ Meido:
 	ldr	r1, [r7, #4]
 	ldrb	r1, [r1, #17]
 	add	r0, r0, r1
-	add	r9, r0
+
+    ldrh r1, [r5, #6]
+    add r1, r0
+    strh r1, [r5, #6]
 
     mov r0, r7
     ldr r1, HAS_COLOSSUS_FUNC
@@ -199,13 +205,15 @@ Flower:
 	beq	addStrength
 	ldrb r0, [r7, #0x1A]
 	asr	r0, r0, #1
-	add	r9, r0
 	b mergeFlower
 addStrength:
 	ldrb r0, [r7, #0x14]
 	asr	r0, r0, #1
-	add	r9, r0
 mergeFlower:
+    ldrh r1, [r5, #6]
+    add r1, r0
+    strh r1, [r5, #6]
+
     mov r0, r7
     ldr r1, HAS_IGNIS_FUNC
     bl SetAtkSkillAnimation
