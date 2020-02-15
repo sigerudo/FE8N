@@ -43,7 +43,7 @@ battle_before:
     POIN hasSolo
     POIN hasLifeAndDeath
     POIN hasFort
-    POIN 0
+    POIN HasTrample
     POIN HasHeartseeker
     POIN HasDaunt
     POIN hasBond
@@ -78,7 +78,15 @@ battle_down:
   POIN hasCounter
   POIN hasDoubleLion
   POIN hasSavageBlow
+  POIN fodes_func
 
+HasLunge:
+    HAS_COMBAT
+    WORD LungeID
+
+HasTrample:
+    HAS_NIHIL
+    WORD TrampleID
 HasFierceStance:
     HAS_NIHIL
     WORD FierceStanceID
