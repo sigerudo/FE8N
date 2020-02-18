@@ -1,13 +1,13 @@
 skill_093_unit:
    BYTE $00 $00 0 
 skill_093_class:
-   BYTE $00 $00 0 
+   BYTE $7B $03 $04 0
 skill_093_weapon:
    BYTE $00 $00 0 
 skill_093_item:
    BYTE $00 $00 0 
 #define SKL_HELP_093 $0000
-#define SKL_COLOR_093 $FF
+#define SKL_COLOR_093 0
  
 #define COMBAT_ART_093_ATK 00 
 #define COMBAT_ART_093_HIT 00 
