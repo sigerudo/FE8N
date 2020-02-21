@@ -1,13 +1,13 @@
 skill_034_unit:
    BYTE $00 $00 0 
 skill_034_class:
-   BYTE $7B $03 $04 0
+   BYTE $00 $00 0 
 skill_034_weapon:
    BYTE $00 $00 0 
 skill_034_item:
    BYTE $00 $00 0 
-#define SKL_HELP_034 $0000
-#define SKL_COLOR_034 0
+#define SKL_HELP_034 $055d
+#define SKL_COLOR_034 $FF
  
 #define COMBAT_ART_034_ATK 00 
 #define COMBAT_ART_034_HIT 00 

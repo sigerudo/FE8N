@@ -25,7 +25,7 @@
 #define TomebreakerID 23 //0x17魔殺し
 #define BoldFighterID 24 //0x18差し違え
 #define VengefulFighterID 25 //0x19切り返し
-#define WaryFighterID 26 //0x1a守備隊形
+#define ImpregnableWallID 26 //0x1a鉄壁
 #define GrounderID 27 //0x1B つばめ返し
 #define HelmSplitterID 28 // 0x1C 兜割り
 #define KnightkneelerID 29 // 0x1D 葬騎の一撃
@@ -33,13 +33,13 @@
 #define DistantDefID 31 //0x1f遠距離防御
 #define DeflectID 32  //0x20連撃防御
 #define DesperationID 33 //0x21攻め立て
-#define Leadership1ID  34 //0x22 指揮+1
+#define BladeSessionID 34 //0x22 刃のセッション
 #define LifetakerID 35 //0x23生命吸収
 #define LifeAndDeathID 36 //0x24死線
 #define DeathBlowID 37 //0x25鬼神の一撃
 #define ArmoredBlowID 38 //0x26金剛の一撃
 #define CounterID 39 //0x27 応撃
-//#define QuickenedPulseID 40 //0x28奥義の鼓動
+#define ShieldSessionID 40 //0x28 盾のセッション
 #define GaleCauseID 41 //0x29 神風招来(自軍のみ)
 #define ChargeID 42 //0x2A 突撃
 #define ImbueID 43 //0x2B 治癒
@@ -55,7 +55,7 @@
 #define FortID 53 //0x35 城塞
 #define LullID 54 //0x36 凪
 #define BondID 55 //0x37 絆
-#define Leadership2ID 56 //0x38 指揮+2
+//0x38-0x3F (free)
 
 
 #define AstraID 64 //0x40流星
@@ -78,7 +78,7 @@
 #define StealID 81//0x51盗む(表示のみ)
 #define LocktouchID 82//0x52カギ開け(表示のみ)
 #define CritUpID 83//0x53必殺上昇(表示のみ)
-#define LethalityID 84//0x54瞬殺(表示のみ)
+#define LethalityID 84//0x54滅殺(表示のみ)
 #define SummonID 85//0x55召喚(表示のみ)
 #define DanceID 86//0x56踊る(表示のみ)
 #define SafeguardID 87//0x57メンテナンス(表示のみ)
@@ -87,8 +87,8 @@
 #define RightfulGodID 90 //0x5a魔の器
 #define CantoPlusID 91 //0x5b再移動(自軍のみ)
 #define ImpaleID 92 //0x5c撃破
-#define BladeSessionID 93 //0x5d刃のセッション
-#define ShieldSessionID 94 //0x5et盾のセッション
+#define Leadership1ID 93 //0x5d指揮+1
+#define Leadership2ID 94 //0x5e指揮+2
 #define EclipseID 95 //0x5f月食
 #define JihadID 96 //0x60ジハド
 #define LightBlessID 97 //0x61神竜の加護
@@ -123,7 +123,7 @@
 #define AtrocityID 126 //0x7E 無惨
 #define FallenStarID 127//0x7F 落星
 #define BlitzkriegID 128 //0x80電撃戦
-#define WaryFighterOrgID 129 //0x81 元守備隊形
+#define WaryFighterID 129 //0x81 守備隊形
 #define MiracleOldID 130 //0x82 旧祈り
 #define RecoverID 131 //0x83 完治
 #define ImmuneStatusID 132 //0x84 守護
