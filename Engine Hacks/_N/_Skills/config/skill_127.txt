@@ -3,10 +3,10 @@ skill_127_unit:
 skill_127_class:
    BYTE $00 $00 0 
 skill_127_weapon:
-   BYTE $BD $00 0 
+   BYTE $93 $00 0 
 skill_127_item:
    BYTE $00 $00 0 
-#define SKL_HELP_127 $0000
+#define SKL_HELP_127 $0F7D
 #define SKL_COLOR_127 $FF
  
 #define COMBAT_ART_127_ATK 10 
