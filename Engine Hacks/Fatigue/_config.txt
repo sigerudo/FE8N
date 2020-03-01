@@ -6,6 +6,6 @@ ChapterSetting_Fatigue:	//次章ID(現在ではない)が以下と一致する�
   BYTE $01 $02 $03 $04 $05 $06 $07 $08 $0
 
 #define FATIGUE_WORD $04A7
-#define FATIGUE_HELP $0000
+#define FATIGUE_HELP $0FCC
 
 
