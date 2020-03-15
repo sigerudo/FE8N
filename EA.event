@@ -1,6 +1,6 @@
 #ifdef _FE8_
 
-	#define Free_Space 0x1000000
+	#define Free_Space 0xF20000
 
 //以下は必要に応じて有効化させる
 //	#define Debug_Mode	/* デバッグモード有効化 */
