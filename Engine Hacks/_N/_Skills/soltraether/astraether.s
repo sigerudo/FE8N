@@ -99,11 +99,8 @@ jihad_impl:
     ldsh r0, [r5, r0]
     cmp r0, #0
     ble not_dec @ノーダメ以下はなし
-    mov r1, #0
-loop_three:
-    add r1, #1
-    sub r0, #3
-    bgt loop_three
+    mov r1, #3
+    swi #6      @1/3
     strh r1, [r5, #4]
 not_dec:
     mov r0, #4
@@ -222,6 +219,7 @@ impale_impl:
     mov r1, #8
     ldsh r1, [r5, r1] @防御
     sub r0, r0, r1
+    asr r0, r0, #1
 
     mov r1, #4
     ldsh r1, [r5, r1] @ ダメージ
@@ -272,8 +270,8 @@ ouiAstra:
 	cmp	r0, #0
 	beq	falseAstra	@必殺率がゼロなら終了
 
-@    ldrb r0, [r7, #21]	@技
-	ldrb r0, [r7, #8]	@レベル
+    ldrb r0, [r7, #21]	@技
+@	ldrb r0, [r7, #8]	@レベル
 	mov	r1, #0
 	bl	random	@発動乱数
 	cmp	r0, #1
@@ -365,8 +363,8 @@ TENKU:
     bne falseTenku @@手斧チェック
 jump:
 
-@    ldrb r0, [r7, #21]	@技
-    ldrb r0, [r7, #8]	@レベル
+    ldrb r0, [r7, #21]	@技
+@    ldrb r0, [r7, #8]	@レベル
     mov r1, #0
     bl random
     cmp r0, #0
@@ -375,11 +373,10 @@ jump:
     mov r0, r8
     ldrb r0, [r0, #0x17] @守備
 
-    bl divEight @8割減
-@    lsl r1, r0, #31
-@    lsr r1, r1, #31
-@    asr r0, r0, #1 @半減
-@    add r0, r1
+    lsl r1, r0, #31
+    lsr r1, r1, #31
+    asr r0, r0, #1 @半減
+    add r0, r1
 
     mov r1, #4
     ldsh r1, [r5, r1] @ダメージ
@@ -395,18 +392,6 @@ jump:
         .short 0xF800
     
     b sol_crt
-
-divEight:
-    lsl r0, r0, #2
-    mov r1, #0
-loop_eight:
-    sub r0, #5
-    blt eight
-    add r1, #1
-    b loop_eight
-eight:
-    mov r0, r1
-    bx lr
 
 
 YOUKOU:
