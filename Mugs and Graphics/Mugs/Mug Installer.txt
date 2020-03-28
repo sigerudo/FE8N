@@ -241,8 +241,8 @@ setMugEntry($20, Boris, 3, 5, 3, 3, 1)
 Boris:
   #incext PortraitFormatter Boris.png
   
-setMugEntry($29, kuronosu, 2, 5, 3, 3, 1)
-//setMugExtra($29, 11, 3, 11, 5)
+setMugEntry($29, kuronosu, 2, 5, 3, 3, 1)    ///ÉNÉçÉmÉX
+setMugExtra($29, 0, 4, 0,0)
 kuronosu:
   #incext PortraitFormatter kuronosu.png
   
