@@ -121,8 +121,8 @@ setMugEntry($15, riera, 2, 6, 3, 4, 6)
 //setMugExtra($15, 0, 2, 5, 2)
   #incext PortraitFormatter riera.png 
 
-setMugEntry($0B, pame,2, 6, 3, 4, 1)
-setMugExtra($0B, 0, 2, 10, 4)
+setMugEntry($0B, pame,3, 6, 3, 4, 1)  ///ƒAƒ‹ƒeƒB
+setMugExtra($0B, 0, 2, 0,0)
 pame:
   #incext PortraitFormatter pame.png  
   
