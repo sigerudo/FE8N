@@ -360,7 +360,7 @@ Grace:
   #incext PortraitFormatter Grace.png  
 
 
-setMugEntry($C0, Hestea, 3, 6, 3, 4, 1)     //ヘスティア顔画像
+setMugEntry($C0, Hestea, 3, 5, 3, 3, 1)     //ヘスティア顔画像
 //setMugExtra($27, 0, 2, 5, 2)
 Hestea:
   #incext PortraitFormatter Hestea.png  
