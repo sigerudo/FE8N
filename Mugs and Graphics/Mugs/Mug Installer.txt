@@ -117,7 +117,7 @@ setMugEntry($14, riera, 3, 5, 3, 3, 1)
 riera:
   #incext PortraitFormatter riera.png              
 
-setMugEntry($15, riera, 2, 6, 3, 4, 6)
+setMugEntry($15, riera, 3, 5, 3, 3, 6)
 //setMugExtra($15, 0, 2, 5, 2)
   #incext PortraitFormatter riera.png 
 
