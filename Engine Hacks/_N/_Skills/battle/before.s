@@ -109,6 +109,8 @@ OtherSideSkill:
         bl Kishin
         bl Kongou
         bl Hien
+        bl Meikyou
+        bl Charge
         pop {pc}
     DefSkill:
         bl DistantDef
@@ -118,6 +120,7 @@ OtherSideSkill:
         bl KishinR
         bl KongouR
         bl HienR
+        bl MeikyouR
         pop {pc}
 
 CriticalUp:
@@ -777,6 +780,25 @@ CheckXY:
         mov r0, #0
         bx lr
 
+GetWalked:
+        mov r1, r0
+        ldr r2, =0x0202be44
+        ldrb r0, [r1, #16]
+        ldrb r3, [r2, #0]
+        sub r0, r0, r3
+        bge jump1Walked
+        neg r0, r0  @絶対値取得
+    jump1Walked:
+
+        ldrb r1, [r1, #17]
+        ldrb r2, [r2, #2]
+        sub r2, r1, r2
+        bge jump2Walked
+        neg r2, r2  @絶対値取得
+    jump2Walked:
+        add r0, r0, r2
+        bx lr
+
 Get_Status:
 	ldr r1, =0x08019108
 	mov pc, r1
@@ -902,16 +924,20 @@ CloseDef:
 
 koroshi:
         push {lr}
+        mov r0, #83
+        ldsb r0, [r4, r0]
+        cmp r0, #0
+@        blt falseKoroshi
+
         bl breaker_impl
         cmp r0, #0
         beq falseKoroshi
     gotKoroshi:
         bl setKoroshi
         mov r0, #1
-        b endKoroshi
+        .short 0xE000
     falseKoroshi:
         mov r0, #0
-    endKoroshi:
         pop {pc}
         
     setKoroshi:
@@ -997,7 +1023,32 @@ Konshin:
     falseKonshin:
         mov r0, #0
         pop {pc}
-    
+
+Charge:
+        push {lr}
+        bl GetDistance
+        ldrb r0, [r0]
+        cmp r0, #1
+        bgt endCharge       @遠距離は無効
+        mov r0, r4
+        mov r1, #0
+        bl HAS_CHARGE
+        cmp r0, #0
+        beq endCharge
+        
+        mov r0, r4
+        bl GetWalked
+        cmp r0, #8
+        ble jumpCharge
+        mov r0, #8
+    jumpCharge:
+        mov r1, #90
+        ldrh r2, [r4, r1]
+        add r2, r0
+        strh r2, [r4, r1] @自分
+    endCharge:
+        pop {pc}
+
 Kishin:
         push {lr}
         mov r0, r4
@@ -1035,6 +1086,11 @@ KishinR:
 
 Kongou:
         push {lr}
+        mov r0, r5
+        bl IsMagic
+        cmp r0, #1
+        beq endKongou
+
         mov r0, r4
         mov r1, #0
         bl HasKongou
@@ -1049,6 +1105,11 @@ Kongou:
         pop {pc}
 KongouR:
         push {lr}
+        mov r0, r5
+        bl IsMagic
+        cmp r0, #1
+        beq endKongou
+
         mov r0, r4
         mov r1, #0
         bl HasKongouR
@@ -1057,10 +1118,65 @@ KongouR:
     
         mov r1, #92
         ldrh r0, [r4, r1]
-        add r0, #3
+        add r0, #6
         strh r0, [r4, r1]
         b endKongou
-	
+
+Meikyou:
+        push {lr}
+        mov r0, r5
+        bl IsMagic
+        cmp r0, #0
+        beq endMeikyou
+
+        mov r0, r4
+        mov r1, #0
+        bl HasMeikyou
+        cmp r0, #0
+        beq endMeikyou
+    
+        mov r1, #92
+        ldrh r0, [r4, r1]
+        add r0, #10
+        strh r0, [r4, r1]
+    endMeikyou:
+        pop {pc}
+MeikyouR:
+        push {lr}
+        mov r0, r5
+        bl IsMagic
+        cmp r0, #0
+        beq endMeikyou
+
+        mov r0, r4
+        mov r1, #0
+        bl HasMeikyouR
+        cmp r0, #0
+        beq endMeikyou
+    
+        mov r1, #92
+        ldrh r0, [r4, r1]
+        add r0, #6
+        strh r0, [r4, r1]
+        b endMeikyou
+
+IsMagic:
+        add r0, #80
+        ldrb r0, [r0]
+        cmp r0, #4
+        beq trueMagic
+        cmp r0, #5
+        beq trueMagic
+        cmp r0, #6
+        beq trueMagic
+        cmp r0, #7
+        beq trueMagic
+        mov r0, #0
+        bx lr
+    trueMagic:
+        mov r0, #1
+        bx lr
+
 Hien:
         push {lr}
         mov r0, r4
@@ -1155,10 +1271,14 @@ SHIELD_SESSION_ADDR = (addr+52)
 HAS_AVOIDUP_ADDR = (addr+56)
 HAS_CRITICALUP_ADDR = (addr+60)
 WARYFIGHTER_ADDR = (addr+64)
-@FLY_E_ADDR = (addr+68)
+HAS_CHARGE:
+    ldr r2, addr+68
+    mov pc, r2
 @ARMOR_E_ADDR = (addr+72)
 @HORSE_E_ADDR = (addr+76)
-@MONSTER_E_ADDR = (addr+80)
+HasMeikyou:
+    ldr r3, (addr+80)
+    mov pc, r3
 HIEN_ADDR = (addr+84)
 ACE_ADDR = (addr+88)
 KONSHIN_ADDR = (addr+92)
@@ -1169,7 +1289,9 @@ TRAMPLE_ADDR = (addr+108)
 HEARTSEEKER_ADDR = (addr+112)
 DAUNT_ADDR = (addr+116)
 HAS_BOND_ADDR = (addr+120)
-@HAS_ATROCITY_ADDR = (addr+124)
+HasMeikyouR:
+    ldr r3, (addr+124)
+    mov pc, r3
 HAS_KISHIN_R = (addr+128)
 HAS_KONGOU_R = (addr+132)
 HAS_HIEN_R = (addr+136)
