@@ -55,7 +55,8 @@
 #define FortID 53 //0x35 城塞
 #define LullID 54 //0x36 凪
 #define BondID 55 //0x37 絆
-//0x38-0x3F (free)
+#define renzokuID 56 //0x38 連続
+//0x39-0x3F (free)
 
 
 #define AstraID 64 //0x40流星
