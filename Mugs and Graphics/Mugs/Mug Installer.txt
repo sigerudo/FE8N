@@ -369,5 +369,10 @@ setMugEntry($C1, Victor, 3, 5, 3, 3, 1)     //ヴィクトル顔画像
 //setMugExtra($27, 0, 2, 5, 2)
 Victor:
   #incext PortraitFormatter Victor.png    
+  
+setMugEntry($C2, Adelard, 3, 5, 3, 3, 1)     //アデラート眼帯左顔画像
+//setMugExtra($C2, 0, 2, 5, 2)
+Adelard:
+  #incext PortraitFormatter Adelard.png 
 
 //////////////////////////縺薙％縺ｾ縺ｧ鬘皮判蜒
