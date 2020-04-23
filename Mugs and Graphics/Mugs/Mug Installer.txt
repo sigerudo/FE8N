@@ -36,7 +36,7 @@ setMugEntry($04, vorutu, 2, 5, 3, 3, 1)
 vorutu:
   #incext PortraitFormatter vorutu.png  
   
-setMugEntry($0F, mirano, 2, 6, 4, 4, 1)
+setMugEntry($0F, mirano, 2, 6, 3, 3, 1)
 //setMugExtra($0F, 10, 3, 0, 0)
 mirano:
   #incext PortraitFormatter mirano.png 
