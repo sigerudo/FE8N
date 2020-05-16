@@ -171,7 +171,7 @@ oruga:
 varumon:
   #incext PortraitFormatter varumon.png
  
- setMugEntry($19, haguro,2, 6, 4, 4, 1)
+ setMugEntry($19, haguro,2, 6, 3, 4, 1)        ///ハグロ現在
 //setMugExtra($19, 0, 4, 10, 4)
 haguro:
   #incext PortraitFormatter haguro.png
@@ -379,5 +379,11 @@ setMugEntry($C3, Joel, 3, 4, 3, 2, 1)     //ジョエル顔画像
 //setMugExtra($C3, 0, 2, 5, 2)
 Joel:
   #incext PortraitFormatter Joel.png 
+
+ setMugEntry($C4, haguro2,2, 6, 4, 4, 1)　　///ハグロ昔
+//setMugExtra($C4, 0, 4, 10, 4)
+haguro2:
+  #incext PortraitFormatter haguro2.png
+
 
 //////////////////////////縺薙％縺ｾ縺ｧ鬘皮判蜒
