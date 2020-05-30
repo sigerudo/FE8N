@@ -76,7 +76,7 @@ setMugEntry($6E, ku, 2, 5, 2, 4, 1)
 //setMugExtra($6E, 0, 2, 5, 2)
 ku:
   #incext PortraitFormatter ku.png
-setMugEntry($36, ke, 2, 5, 3, 3, 1)
+setMugEntry($36, ke, 3, 5, 3, 3, 1)
 //setMugExtra($36, 0, 2, 5, 2)
 ke:
   #incext PortraitFormatter ke.png   
