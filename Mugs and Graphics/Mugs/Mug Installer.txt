@@ -151,7 +151,7 @@ setMugEntry($1A, mist,2, 6, 2, 4, 1)
 mist:
   #incext PortraitFormatter mist.png
      
- setMugEntry($2A, rihita,3, 6, 3, 4, 1)
+ setMugEntry($2A, rihita,2, 6, 3, 4, 1)
 //setMugExtra($1A, 0, 4, 10, 4)
 rihita:
   #incext PortraitFormatter rihita.png
