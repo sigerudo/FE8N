@@ -49,7 +49,8 @@
 #include "Lizzy_sw1 Installer.event"   //0xC0      オフィシエ　リディ剣
 #include "Ridelibukinasi Installer.event"   //0x56      オフィシエ　リディ武器なし
 #include "Lizzy_sw3 Installer.event"   //0x104      オフィシエ　リディ槍
-#include "Rideli2 Installer.event"   //0x10      オフィシエ　リディ剣（エターナルソード）
+#include "Rideli2 Installer.event"   //0x10      オフィシエ　リディ剣（次元斬）
+#include "Rideli3 Installer.event"   //0x10B      オフィシエ　リディ剣（エターナルソード）
 
 //////////////ここまでアニメデータ
 ALIGN 4
