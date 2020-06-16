@@ -52,7 +52,7 @@ setMugEntry($05, eee, 3, 5, 3, 3, 1)  ///バッカス
 eee:
   #incext PortraitFormatter eee.png 
 
-setMugEntry($0A, oooo, 3, 5, 3, 3, 1) ///ファリス
+setMugEntry($0A, oooo, 2, 5, 3, 3, 1) ///ファリス
 //setMugExtra($0A, 0, 2, 5, 2)
 oooo:
   #incext PortraitFormatter oooo.png   
